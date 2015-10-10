@@ -1,0 +1,155 @@
+/*======================== mixins & variables ==============================*/
+/*============================ common styles ============================== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif; }
+
+.clearfix {
+  *zoom: 1; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease-in; }
+
+a:hover,
+a:active,
+a:focus {
+  transition: all 0.1s ease-out; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: none;
+  padding: 0;
+  margin: 0; }
+
+/*============================ main styles =================================*/
+.main-container {
+  height: 100%; }
+  .main-container section {
+    position: relative;
+    z-index: 2; }
+
+.content-wrapper {
+  display: block;
+  height: 100%;
+  width: 100%; }
+  .content-wrapper .content-inner {
+    height: 100%; }
+    .content-wrapper .content-inner img {
+      height: 100vh; }
+
+#presentation {
+  position: relative;
+  z-index: 2;
+  background-color: darkgrey;
+  margin: 0;
+  transition: opacity 0.5s ease;
+  border-bottom: 1px solid #fff;
+  overflow: hidden;
+  height: auto;
+  padding: 220px 0 0;
+  color: #fff; }
+  #presentation h1 {
+    color: #fff;
+    font-size: 100px;
+    font-weight: bold; }
+
+@media only screen and (min-width: 768px) {
+  #presentation {
+    height: 100%;
+    min-height: 100vh; }
+  .desktop-device #presentation {
+    margin: 0 0 150% 0;
+    opacity: 1;
+    background-color: darkgrey; }
+  .desktop-device #presentation.fade-out {
+    opacity: 0; } }
+
+#animation-block {
+  margin: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  height: auto; }
+  #animation-block .content-wrapper .content-img {
+    display: none;
+    width: 100%;
+    position: relative; }
+    #animation-block .content-wrapper .content-img img {
+      width: 100%; }
+    #animation-block .content-wrapper .content-img .bg-img {
+      position: relative;
+      z-index: 1; }
+    #animation-block .content-wrapper .content-img .front-img {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0; }
+
+@media only screen and (min-width: 768px) {
+  #animation-block {
+    min-height: 850px; }
+    #animation-block .content-wrapper {
+      position: absolute;
+      top: 0;
+      bottom: 25%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 0;
+      height: 75%;
+      min-height: 400px; }
+      #animation-block .content-wrapper .content-img.first-step {
+        display: block; }
+  .desktop-device #animation-block {
+    position: fixed;
+    height: 100%;
+    min-height: 850px; } }
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  #animation-block .content-wrapper .content-img.second-step {
+    display: none; }
+  #animation-block .content-wrapper .content-img.third-step {
+    display: none; } }
+
+#scroll-section {
+  padding: 0;
+  position: relative;
+  background-color: darkgrey; }
+  #scroll-section .scroll-section_content {
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+    left: 0;
+    right: 0; }
+    #scroll-section .scroll-section_content .row,
+    #scroll-section .scroll-section_content .small-12 {
+      height: 100%; }
+      #scroll-section .scroll-section_content .row h1,
+      #scroll-section .scroll-section_content .small-12 h1 {
+        margin: 300px 0 0;
+        font-weight: bold;
+        font-size: 100px;
+        color: #fff; }
